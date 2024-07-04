@@ -59,8 +59,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'alocine_scraper.pipelines.AlocineScraperPipeline': 800,
-    'alocine_scraper.pipelines.PostgresPipeline': 300,
+    'alocine_scraper.pipelines.AlocineScraperPipeline': 300,
+    'alocine_scraper.pipelines.PostgresPipeline': 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

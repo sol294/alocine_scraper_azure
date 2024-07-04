@@ -5,6 +5,7 @@ import psycopg2
 # à remplir depuis .env
 DATABASE_URL = 'postgresql://adminname:adminpassword@NAMESERVER.postgres.database.azure.com:5432/dbname'
 
+
 def connect_to_postgres():
     try:
         conn = psycopg2.connect(DATABASE_URL)

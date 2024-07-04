@@ -258,10 +258,10 @@ import re
 class AlocineScraperPipeline:
     def process_item(self, item, spider):
         item = self.clean_duration(item)
-        item = self.clean_actors(item)
+        #item = self.clean_actors(item)
         item = self.clean_description(item)
-        item = self.clean_director(item)
-        item = self.clean_genre(item)
+        #item = self.clean_director(item)
+        # item = self.clean_genre(item)
         item = self.clean_original_title(item)
         item = self.clean_score(item)
         item = self.clean_title(item)
@@ -283,13 +283,13 @@ class AlocineScraperPipeline:
             adapter['duration'] = total_minutes
         return item
 
-    def clean_actors(self, item):
-        adapter = ItemAdapter(item)
-        actors = adapter.get('actors')
-        if actors:
-            actors_cleaned = ', '.join([actor.strip() for actor in actors])
-            adapter['actors'] = actors_cleaned
-        return item
+    # def clean_actors(self, item):
+    #     adapter = ItemAdapter(item)
+    #     actors = adapter.get('actors')
+    #     if actors:
+    #         actors_cleaned = ', '.join([actor.strip() for actor in actors])
+    #         adapter['actors'] = actors_cleaned
+    #     return item
 
     def clean_description(self, item):
         adapter = ItemAdapter(item)
@@ -299,21 +299,22 @@ class AlocineScraperPipeline:
             adapter['description'] = description_cleaned
         return item
 
-    def clean_director(self, item):
-        adapter = ItemAdapter(item)
-        director = adapter.get('director')
-        if director:
-            director_cleaned = ', '.join([dir.strip() for dir in director])
-            adapter['director'] = director_cleaned
-        return item
+    # def clean_director(self, item):
+    #     adapter = ItemAdapter(item)
+    #     director = adapter.get('director')
+    #     if director:
+    #         director_cleaned = ', '.join([dir.strip() for dir in director])
+    #         adapter['director'] = director_cleaned
+    #     return item
 
-    def clean_genre(self, item):
-        adapter = ItemAdapter(item)
-        genre = adapter.get('genre')
-        if genre:
-            genre_cleaned = ', '.join([g.strip() for g in genre if g.strip() != '|'])
-            adapter['genre'] = genre_cleaned
-        return item
+    # def clean_genre(self, item):
+    #     adapter = ItemAdapter(item)
+    #     genre = adapter.get('genre')
+    #     if genre:
+    #         genre_cleaned = ', '.join([g.strip() for g in genre if g.strip() != '|'])
+    #         adapter['genre'] = genre_cleaned
+    #     return item
+    
 
     def clean_original_title(self, item):
         adapter = ItemAdapter(item)

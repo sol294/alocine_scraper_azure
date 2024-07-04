@@ -33,6 +33,7 @@ from sqlalchemy.orm import relationship
 #à remplir depuis .env
 DATABASE_URL = 'postgresql://adminname:adminpassword@NAMESERVER.postgres.database.azure.com:5432/dbname'
 
+
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
 
